@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+ENV/
+env/
+.env
+.venv
+
+# Django
+*.log
+*.sqlite3
+
+# Pytest
+.pytest_cache/
+
+# Editor files
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
