@@ -37,7 +37,8 @@
 
 
 
-.buttermilk{
+/* .buttermilk */
+.apricot{
     background-color:#fff;background-image:linear-gradient(#fff7ef, #fff);
     background-image:-webkit-linear-gradient(#fff7ef, #fff);
     background-image:-moz-linear-gradient(#fff7ef, #fff);
@@ -70,7 +71,9 @@
     width:100%;
 }
 
-.mlkpro{
+/* .mlkpro */
+
+.apricotpro{
     color:#636362;
     font-size:22px;
     line-height:22px;
