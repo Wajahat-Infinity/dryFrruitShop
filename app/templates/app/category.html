@@ -1,4 +1,36 @@
-{% extends "app/base.html" %}
+{% extends 'app/base.html' %}
 {% load static %}
-{% block title %}category page{% endblock title %}
-{% block main-content %}<p> Category: {{val}}</p>{% endblock main-content %}
+{% block title %}
+  category page
+{% endblock %}
+{% block main-content %}
+<div class="container my-5">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="list-group">
+        {% for product in products %}
+          <a href="#" class="list-group-item list-group-item-action" aria-current="true">{{ product.title }}</a>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <div class="row">
+        {% for product in products %}
+          <div class="col text-center mb-4">
+            <a href="#" class="btn" aria-current="true">
+              <div>
+                <img src="{{ product.product_image.url }}" width="200px" height="300px" alt="image" />
+                <div class="fw-bold">{{ product.title }}</div>
+                <div class="fw-bold text-danger">
+                  Rs: {{ product.discount_price }}/-
+                  <small class="fw-light text-decoration-line-through">{{ product.selling_price }}</small>
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock main-content %}

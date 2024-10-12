@@ -89,6 +89,6 @@
 }
 
 .carousel-image {
-    height: 400px; /* Set the desired height */
+    height: 500px; /* Set the desired height */
     object-fit: cover; /* Ensures the image fits within the specified height without stretching */
   }
