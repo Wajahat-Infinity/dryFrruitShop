@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -124,3 +125,22 @@ MEDIA_ROOT = BASE_DIR/'media'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+JAZZMIN_SETTINGS = {
+    "site_title": "My Admin",
+    "site_header": "My Admin Header",
+    "site_brand": "My Brand",
+    "welcome_sign": "Welcome to My Admin",
+    "copyright": "Your Company",
+    "search_model": "auth.User",  # Change to your main model for search
+    "user_avatar": None,  # You can specify an avatar model field if needed
+    "topmenu_links": [
+        # Custom top menu links
+        {"name": "Home", "url": "/", "new_window": False},
+    ],
+    "show_sidebar": True,
+    "show_navigation": True,
+    "hide_app_index": False,
+    "order_with_respect_to": ["auth", "myapp"],
+    "custom_css": None,  # Add your custom CSS file here
+}

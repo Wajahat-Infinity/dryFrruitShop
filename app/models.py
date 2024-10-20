@@ -1,7 +1,7 @@
 from django.db import models
 
 
-CATEGORY_CHOICES=(('AP','APRICOT'),('MB','MALLBERRY'),('WN','WALLNUT'),('PT','PISTACHU'),('AL','ALMOND'),('WH','WAJAHATHUS'),)
+CATEGORY_CHOICES=(('AP','APRICOT'),('MB','MALLBERRY'),('WN','WALLNUT'),('PT','PISTACHU'),('AL','ALMOND'),('D','Dates'),)
 
 class Product(models.Model):
     title=models.CharField(max_length=100)
