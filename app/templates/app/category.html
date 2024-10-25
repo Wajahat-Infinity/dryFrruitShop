@@ -9,7 +9,7 @@
     <div class="col-sm-3">
       <div class="list-group">
         {% for product in products %}
-          <a href="#" class="list-group-item list-group-item-action" aria-current="true">{{ product.title }}</a>
+        <a href="{% url 'product-title' product.title %}" class="list-group-item list-group-item-action">{{ product.title }}</a>
         {% endfor %}
       </div>
     </div>
@@ -17,7 +17,7 @@
       <div class="row">
         {% for product in products %}
           <div class="col text-center mb-4">
-            <a href="#" class="btn" aria-current="true">
+            <a href="{% url 'productdetail' product.id %}" class="btn" aria-current="true">
               <div>
                 <img src="{{ product.product_image.url }}" width="200px" height="300px" alt="image" />
                 <div class="fw-bold">{{ product.title }}</div>
