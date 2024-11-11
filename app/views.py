@@ -4,6 +4,10 @@ from django.http import HttpResponse
 from django.views import View 
 from . models import Product
 
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import AuthenticationForm
+from .forms import CustomUserCreationForm, CustomAuthenticationForm
+
 # Create your views here.
 def home(request):
     return render(request,"app/home.html")
@@ -45,3 +49,10 @@ class CategoryTitleView(View):
         }
         return render(request, "app/category.html", context)
 
+class CustomerRegistrationView(View):
+    def get(self,request):
+        form=CustomUserCreationForm()
+        context={
+            'form':form,
+        }
+        return render(request,"app/customerregistration.html",context)
