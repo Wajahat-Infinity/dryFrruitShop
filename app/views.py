@@ -3,7 +3,7 @@ from urllib import request
 from django.http import HttpResponse
 from django.views import View 
 from . models import Product
-
+from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import CustomUserCreationForm, CustomAuthenticationForm
@@ -52,7 +52,16 @@ class CategoryTitleView(View):
 class CustomerRegistrationView(View):
     def get(self,request):
         form=CustomUserCreationForm()
-        context={
-            'form':form,
-        }
-        return render(request,"app/customerregistration.html",context)
+        # context={
+        #     'form':form,
+        # }
+        return render(request,"app/customerregistration.html",locals())
+    def post(self,request):
+        form = CustomAuthenticationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,"Congratulation! User registration successsful")
+        else:
+            messages.warning(request,"invalid Data")
+            
+        return render(request,"app/customerregistration.html",locals())
